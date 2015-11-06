@@ -100,7 +100,8 @@
                             <click eval="true" lang="JavaScript" run="print('Hi windows\n');"/>
                         </windows>
                         <mac>
-                            <click eval="true" lang="JavaScript" run="print('Hi mac\n');"/>
+                            <click eval="true" lang="AppleScript"
+                                   run="display notification &quot;Lorem ipsum dolor sit amet&quot; with title &quot;Title&quot;"/>
                         </mac>
                         <linux>
                             <click eval="true" lang="JavaScript" run="print('Hi linux\n');"/>

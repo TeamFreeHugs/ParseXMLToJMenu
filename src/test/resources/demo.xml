@@ -1,0 +1,9 @@
+<jmenubar>
+    <jmenu>
+        <info>
+            <name>A Menu</name>
+            <mnemonic>VK_A</mnemonic>
+            <description>Just a menu.</description>
+        </info>
+    </jmenu>
+</jmenubar>
