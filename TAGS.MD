@@ -96,7 +96,7 @@ If, else, for...
 ###If
 If statement. Right now, the following types are supported:
 
-<if type="os">
+    <if type="os">
 
 This checks for the OS type.
 
