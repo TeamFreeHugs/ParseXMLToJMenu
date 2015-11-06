@@ -1,0 +1,120 @@
+<jmenubar>
+    <jmenu>
+        <info>
+            <name>A Menu</name>
+            <mnemonic>VK_A</mnemonic>
+            <description>The only menu in this program that has menu item</description>
+        </info>
+        <children>
+            <jmenuitem>
+                <text>A text-only menu item</text>
+                <mnemonic>VK_T</mnemonic>
+                <accelerator>
+                    <key>VK_1</key>
+                    <mask>ALT</mask>
+                </accelerator>
+                <description>This doesn't really do anything</description>
+            </jmenuitem>
+            <jmenuitem>
+                <text>Both text and icon</text>
+                <icon>images/middle.gif</icon>
+                <mnemonic>VK_B</mnemonic>
+            </jmenuitem>
+            <jmenuitem>
+                <icon>images/middle.gif</icon>
+                <mnemonic>VK_D</mnemonic>
+            </jmenuitem>
+            <separator/>
+            <group>
+                <radiobutton>
+                    <text>A radio button menu item</text>
+                    <selected>true</selected>
+                    <mnemonic>VK_R</mnemonic>
+                </radiobutton>
+                <radiobutton>
+                    <text>Another one</text>
+                    <mnemonic>VK_D</mnemonic>
+                </radiobutton>
+            </group>
+            <separator/>
+            <group>
+                <checkbox>
+                    <text>A check box menu item</text>
+                    <mnemonic>VK_C</mnemonic>
+                </checkbox>
+            </group>
+            <group>
+                <checkbox>
+                    <text>Another one</text>
+                    <mnemonic>VK_H</mnemonic>
+                </checkbox>
+            </group>
+            <separator/>
+            <jmenu>
+                <info>
+                    <name>A submenu</name>
+                    <mnemonic>VK_S</mnemonic>
+                </info>
+                <children>
+                    <jmenuitem>
+                        <text>An item in the submenu</text>
+                        <accelerator>
+                            <key>VK_2</key>
+                            <mask>ALT</mask>
+                        </accelerator>
+                    </jmenuitem>
+                    <jmenuitem>
+                        <text>Another item</text>
+                    </jmenuitem>
+                </children>
+            </jmenu>
+        </children>
+
+    </jmenu>
+    <jmenu>
+        <info>
+            <name>Another menu</name>
+            <mnemonic>VK_N</mnemonic>
+            <description>This menu does nothing</description>
+        </info>
+    </jmenu>
+    <jmenu>
+        <info>
+            <name>I work</name>
+            <mnemonic>VK_I</mnemonic>
+        </info>
+        <children>
+            <jmenuitem>
+                <text>Click me and watch stdout!</text>
+                <accelerator>
+                    <key>VK_C</key>
+                    <mask>CTRL</mask>
+                    <mask>SHIFT</mask>
+                    <mask>ALT</mask>
+                </accelerator>
+                <events>
+                    <click className="EventHandler" methodName="handleClickDemo"/>
+                    <click eval="true" lang="JavaScript" run="print('Yo from JavaScript!\n');"/>
+                    <if type="os">
+                        <windows>
+                            <click eval="true" lang="JavaScript" run="print('Hi windows\n');"/>
+                        </windows>
+                        <mac>
+                            <click eval="true" lang="JavaScript" run="print('Hi mac\n');"/>
+                        </mac>
+                        <linux>
+                            <click eval="true" lang="JavaScript" run="print('Hi linux\n');"/>
+                            <click eval="true" lang="JavaScript" run="print('Hi linux 2.0\n');"/>
+                            <click eval="true" lang="JavaScript" run="print('Testing third line for linux\n');"/>
+                            <click eval="true" lang="JavaScript" run="print('And while at it, why not another?\n');"/>
+                            <click eval="true" lang="JavaScript" run="if (typeof JSON !== 'undefined') print('Also, JSON: ' + JSON.stringify({hello: 'world'}) + '\n');"/>
+                        </linux>
+                        <else>
+                            <click eval="true" lang="JavaScript" run="print('I dunno what you are...');"/>
+                        </else>
+                    </if>
+                </events>
+            </jmenuitem>
+        </children>
+    </jmenu>
+</jmenubar>
