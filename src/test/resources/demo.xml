@@ -1,9 +1,57 @@
 <jmenubar>
+    <if type="os">
+        <linux>
+            <jmenu>
+                <info>
+                    <name>Linux</name>
+                </info>
+            </jmenu>
+        </linux>
+        <windows>
+            <jmenu>
+                <info>
+                    <name>Windows</name>
+                </info>
+            </jmenu>
+        </windows>
+        <else>
+
+            <jmenu>
+                <info>
+                    <name>Agar Agar</name>
+                </info>
+            </jmenu>
+        </else>
+    </if>
     <jmenu>
         <info>
-            <name>A Menu</name>
-            <mnemonic>VK_A</mnemonic>
-            <description>Just a menu.</description>
+            <name>Another menu</name>
+            <mnemonic>VK_N</mnemonic>
+            <description>This menu does nothing</description>
         </info>
+        <children>
+            <if type="os">
+                <windows>
+                    <jmenuitem>
+                        <text>Yo Windows</text>
+                    </jmenuitem>
+                </windows>
+                <linux>
+                    <jmenuitem>
+                        <text>Yo Linux</text>
+                    </jmenuitem>
+                </linux>
+                <mac>
+                    <jmenuitem>
+                        <text>Yo Mac</text>
+                    </jmenuitem>
+                </mac>
+                <else>
+                    <jmenuitem>
+                        <text>Yo!</text>
+                    </jmenuitem>
+                </else>
+            </if>
+        </children>
     </jmenu>
 </jmenubar>

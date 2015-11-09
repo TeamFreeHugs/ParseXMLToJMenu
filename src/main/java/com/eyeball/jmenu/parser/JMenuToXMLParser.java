@@ -21,8 +21,6 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 
 @SuppressWarnings("ALL")
 public class JMenuToXMLParser {
@@ -42,7 +40,6 @@ public class JMenuToXMLParser {
             throw new ParseException("Child element must be a <jmenubar>");
         }
         Element rootElement = document.select("html body jmenubar").get(0);
-        Elements jmenus = document.select("html body jmenubar jmenu");
         Elements allIfs = document.select("if");
         for (Element ifElement : allIfs) {
             if (ifElement.attr("type").isEmpty())
@@ -68,6 +65,7 @@ public class JMenuToXMLParser {
             }
         }
         System.out.println(document.ownerDocument().html());
+        Elements jmenus = document.select("html body jmenubar jmenu");
         for (Element jmenu : jmenus) {
             if (jmenu.parent().equals(document.select("html body jmenubar").get(0))) {
                 JMenu menu = createJMenu(jmenu);
@@ -78,9 +76,9 @@ public class JMenuToXMLParser {
     }
 
     private static JMenu createJMenu(Element jmenu) {
-        String name = jmenu.select("info name").get(0).text();
+        String name = jmenu.select("info name").text();
         JMenu menu = new JMenu(name);
-        String mnemonic = jmenu.select("info mnemonic").get(0).text();
+        String mnemonic = jmenu.select("info mnemonic").text();
         if (!mnemonic.isEmpty()) {
             try {
                 int keyVal = KeyEvent.class.getField(mnemonic).getInt(null);

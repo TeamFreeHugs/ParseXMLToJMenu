@@ -86,6 +86,7 @@
         <children>
             <jmenuitem>
                 <text>Click me and watch stdout!</text>
+                <mnemonic>VK_C</mnemonic>
                 <accelerator>
                     <key>VK_C</key>
                     <mask>CTRL</mask>
@@ -108,7 +109,8 @@
                             <click eval="true" lang="JavaScript" run="print('Hi linux 2.0\n');"/>
                             <click eval="true" lang="JavaScript" run="print('Testing third line for linux\n');"/>
                             <click eval="true" lang="JavaScript" run="print('And while at it, why not another?\n');"/>
-                            <click eval="true" lang="JavaScript" run="if (typeof JSON !== 'undefined') print('Also, JSON: ' + JSON.stringify({hello: 'world'}) + '\n');"/>
+                            <click eval="true" lang="JavaScript"
+                                   run="if (typeof JSON !== 'undefined') print('Also, JSON: ' + JSON.stringify({hello: 'world'}) + '\n');"/>
                         </linux>
                         <else>
                             <click eval="true" lang="JavaScript" run="print('I dunno what you are...');"/>
